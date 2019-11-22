@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Bem-vindo ao Social Commerce</title>
+        <link href="assets/css/reset.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:800&display=swap" rel="stylesheet">
+        <script src="./assets/javascript/db.js"></script>
+        <script src="./assets/javascript/codes.js"></script>
+        <script src="./assets/javascript/index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="index.html"><img class="logo" src="assets/img/logo.png" alt="logo"></a>
+            <ul class="menu-desktop">
+                {{#each portfolio}}
+                    <li class="menu-item"><a href="categoria.html?id={{this.categoria.nome}}">{{this.categoria.nome}}</a></li>
+                {{/each}}
+            </ul>
+            <div class="dropdown-menu">
+                <img class="menu-mobile" src="assets/img/menu.png" alt="menu">
+                <ul class="dropdown">
+                    {{#each portfolio}}
+                        <li class="menu-item"><a href="categoria.html?id={{this.categoria.nome}}">{{this.categoria.nome}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+
+        </header>
+        <div class="banner">
+            <img class="image" src='assets/img/1.jpg' alt='projetos'>
+            <p class="title">
+                Bem-vindo ao Social Commerce!!!
+            </p>
+        </div>
+        <div class="container">
+            <ul class="projetos">
+                {{#each portfolio}}
+                <li class="projeto-item">
+                        <!-- <img class="Projeto-img" src="assets/img/app.jpg" alt="Projeto App"> -->
+                        <img class="Projeto-img" src=./assets/img/{{this.categoria.nome}}.jpg alt={{this.categoria.nome}}>
+                        <div class="proj-content">
+                        <a class="cat-link">{{this.categoria.nome}}</a>
+                        <p>{{this.categoria.descricao}}</p>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{id}}
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Projetos Engenharia</title>
+        <link href="assets/css/reset.css" rel="stylesheet">
+        <link href="assets/css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:800&display=swap" rel="stylesheet">
+        <script src="./assets/javascript/db.js"></script>
+        <script src="./assets/javascript/codes.js"></script>
+        <script src="./assets/javascript/index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <header class="header">
+            <a href="index.html"><img class="logo" src="assets/img/logo.png" alt="logo"></a>
+            <ul class="menu-desktop">
+                {{#each portfolio}}
+                    <li class="menu-item"><a href="categoria.html?id={{this.categoria.nome}}">{{this.categoria.nome}}</a></li>
+                {{/each}}
+            </ul>
+            <div class="dropdown-menu">
+                <img class="menu-mobile" src="assets/img/menu.png" alt="menu">
+                <ul class="dropdown">
+                    {{#each portfolio}}
+                        <li class="menu-item"><a href="categoria.html?id={{this.categoria.nome}}">{{this.categoria.nome}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+
+        </header>
+
+        <h1 class="title">Estação Metereológica</h1>
+        <div class="project-container">
+            <div>
+                <img class="imagem-de-projeto" src="assets/img/4.jpg" alt="Estação Metereológica">
+            </div>
+            <div class="texto"> 
+                <h1>Descrição</h1>
+                <p class="desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+                <h2>Equipe</h2>
+                <ul class="participantes">
+                    <li>Juca</li>
+                    <li>Andrea</li>
+                    <li>DICO</li>
+                    <li>Maria</li>
+                </ul>
+                <h2>Materiais</h2>
+                <ul class="materiais">
+                    <li>Placa PCB</li>
+                    <li>Sensor DHT22</li>
+                    <li>Sensor LM-35</li>
+                    <li>Arduino</li>
+                </ul>
+            </div>    
+        </div>
+    </body>
+</html>
