@@ -31,18 +31,19 @@
 
         </header>
         <main>
-            <p class="img-categoria">
-                <img src="assets/img/eletronica.jpg" alt="Circuito eletrônico">
-            </p>
+            <ul class="projetos">
+                    {{#each portfolio}}
+                            <img class="Projeto-img" src=./assets/img/{{this.categoria.nome}}.jpg alt={{this.categoria.nome}}>
+                            <p>{{this.categoria.nome}}</p>
+                    {{/each}}
+                </ul>
 
-            <p class="titulo-cat">
-                Nesta página esta disponivel o meu projeto de {{id}}
-            </p>
+           
 
             <ul class="projetos-1">
                 {{#each projetos}}
                 <li class="projeto-item">
-                    <img class="img-too-big" src=./assets/img/{{this.categoria.nome}}.jpg alt={{this.categoria.nome}}>
+                    <img class="projeto-item" src=./assets/img/{{this.categoria.nome}}.jpg alt={{this.categoria.nome}}>
                     <a href="projeto.html">{{this.titulo}}</a>
                 </li>
                 {{/each}}
