@@ -207,4 +207,9 @@ body {
         width: 100%;
     }
 
+    .Projeto-img {
+    width: 50%;
+    display: flex;
+    }
+
 }
